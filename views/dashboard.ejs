@@ -1,0 +1,47 @@
+<%- include('partials/head') -%>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div style="height: 880px;" class="col-3 bg-dark py-5 text-white text-center">
+                <h1 style="font-size: 3.5rem;">Dashboard</h1>
+                <hr>
+                <h1><%= admin %></h1>
+            </div>
+            <div class="col-9 p-0 m-0">
+                <%- include('partials/navbar') -%>
+                <div class="m-5 ms-5 me-5 ">
+                    <h1>Players</h1>
+                    <div class="m-5 ms-5 me-5">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Score</th>
+                                <th scope="col">Diamond</th>
+                                <th scope="col">Actions</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <% players.forEach((player, key) => { %>
+                                <tr>
+                                  <th scope="row"><%= key+ 1 %></th>
+                                  <td><%= player.username %></td>
+                                  <td><%= player.score%></td>
+                                  <td><%= player.diamond%></td>
+                                  <td>
+                                    <a href="update/<%= player.id %>" class="rounded btn btn-success">update</a>
+                                    <a href="player/<%= player.id %>" class="rounded btn btn-primary">info</a>
+                                    <a href="delete/<%= player.id %>" class="rounded btn btn-danger">delete</a>
+                                  </td>
+                                </tr>
+                                <% }) %>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

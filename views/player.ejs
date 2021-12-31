@@ -1,0 +1,28 @@
+<%- include('partials/head') -%>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div style="height: 880px;" class="col-3 bg-dark py-5 text-white text-center">
+                <h1 style="font-size: 3.5rem;">Dashboard</h1>
+                <hr>
+                <h1>admin</h1>
+            </div>
+            <div class="col-9 p-0 m-0">
+                <%- include('partials/navbar') -%>
+                <div class="m-5 ms-5 me-5 ">
+                    <h1>Players</h1>
+                    <div class="m-5 ms-5 me-5">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body text-center">
+                              <h3 class="card-title">Username : <%= player.username%></h3>
+                              <h1><%= player.score %></h1>
+                              <h5> Diamond: <%= player.diamond %></h5>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
